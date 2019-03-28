@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+.block-module-front{
+    background: #fff;
+    overflow: hidden;
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.block-module-front .block_content{
+    width:90%;
+    padding: 20px 0 20px  0 ;
+    display:flex;
+    flex-flow:row wrap;
+}
+
+.block-module-front .block_content .fila,
+.block-module-front .block_content .fila .columna{
+    width:100%;
+}
+
+.block-module-front .block_content .fila .columna{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    margin-top:25px;
+}
+
+.block-module-front .block_content .fila .columna .acordeon{
+    width:100%;
+    margin:2px;
+}
+
+.block-module-front .block_content .fila .columna .acordeon .card-header{
+    padding:2px;
+    background: rgba(255,255,255,0.3);
+}
+
+.block-module-front .block_content .fila .columna .acordeon .card-header .pregunta{
+    color:gray;
+    text-align: justify;
+}
+
+.block-module-front, .formulario .preguntanos {
+    width:100%;
+    border-radius:3px;
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.1);
+}
+
+.block-module-front .titulo{
+    padding:5px;
+    border-bottom: 2px solid #f1f1f1;
+    color:#2fb5d2;
+    width:100%;
+}
+
+.block-module-front .block_content .formulario{
+    width:100%;
+    padding: 20px 0 20px  0 ;
+}
+
+.formulario .preguntanos{
+    background: #fff;
+    width:100%;
+    min-height: 100px;
+    border:1px solid #c2c2c2;
+    padding:12px;
+    font-size:14px;
+}
+
+.formulario .enviar-pregunta{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+
+.formulario .preguntanos:focus, .formulario .preguntanos:hover{
+    border:1px solid #2fb5d2;
+}

@@ -1,0 +1,2 @@
+*ERROR* 	v1.7.5.1	2019/03/14 - 09:58:59: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'que tal where id = 1' at line 1<br /><br /><pre>UPDATE ps_preguntanos SET respuesta = hola que tal where id = 1</pre> at line 769 in file classes/db/Db.php
+*ERROR* 	v1.7.5.1	2019/03/14 - 09:59:32: Unknown column 'respuesta' in 'field list'<br /><br /><pre>UPDATE ps_preguntanos SET respuesta = 'aaas' where id = 1</pre> at line 769 in file classes/db/Db.php

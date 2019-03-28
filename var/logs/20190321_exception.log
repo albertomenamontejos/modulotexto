@@ -1,0 +1,1 @@
+*ERROR* 	v1.7.5.1	2019/03/21 - 14:58:57: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<script>alert('hola')</script> LIMIT 1' at line 1<br /><br /><pre>DELETE FROM `ps_preguntanos` WHERE id = <script>alert('hola')</script> LIMIT 1</pre> at line 769 in file classes/db/Db.php
