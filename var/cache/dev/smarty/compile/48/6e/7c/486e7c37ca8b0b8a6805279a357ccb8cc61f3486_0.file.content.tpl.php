@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-03-28 13:40:36
+/* Smarty version 3.1.33, created on 2019-03-29 14:33:58
   from '/Applications/MAMP/htdocs/prestashop/admin498r8movc/themes/default/template/controllers/login/content.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c9cc0c4868aa8_56741485',
+  'unifunc' => 'content_5c9e1ec62a51d9_25647368',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c9cc0c4868aa8_56741485 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c9e1ec62a51d9_25647368 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Applications/MAMP/htdocs/prestashop/vendor/smarty/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <div id="login-panel">

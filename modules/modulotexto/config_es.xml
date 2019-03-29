@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
-    <name>modulo_texto</name>
+    <name>modulotexto</name>
     <displayName><![CDATA[Mi modulo]]></displayName>
     <version><![CDATA[1.0.0]]></version>
     <description><![CDATA[Descripci&oacute;n de mi m&oacute;dulo.]]></description>
-    <author><![CDATA[]]></author>
+    <author><![CDATA[Soy.es]]></author>
     <tab><![CDATA[front_office_features]]></tab>
 	<confirmUninstall><![CDATA[¿Seguro que quiere desinstalar?]]></confirmUninstall>
     <is_configurable>1</is_configurable>

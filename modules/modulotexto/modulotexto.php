@@ -45,7 +45,6 @@ class ModuloTexto extends Module{
                     `respuesta` VARCHAR(1000),
                     `id_producto` INT(10) NOT NULL,
                     `contestada` TINYINT DEFAULT 0,
-                    `mostrar` TINYINT DEFAULT 1,
                     PRIMARY KEY(`id`)
                 ) ENGINE='._MYSQL_ENGINE_.' DEFAULT CHARSET=utf8');
             }
@@ -60,7 +59,7 @@ class ModuloTexto extends Module{
     public function uninstall()
     {
         if (parent::uninstall())
-        //    Db::getInstance()->execute('DROP TABLE IF EXISTS '._DB_PREFIX_.'preguntanos');
+           Db::getInstance()->execute('DROP TABLE IF EXISTS '._DB_PREFIX_.'preguntanos');
                 return true;
             return false;
     }
@@ -74,12 +73,11 @@ class ModuloTexto extends Module{
     {
         $this->context->controller->addCSS($this->_path.'views/css/back_styles.css', 'all');
         $this->context->controller->addJS($this->_path.'views/js/back_index.js', 'all');
+        //Link para las llamadas ajax
         $link = new Link;
         $ajax_link = $link->getModuleLink('modulotexto', 'ajax');  //Nombre del módulo, nombrel del controlador.
-        $paginacion_link = $link->getModuleLink('modulotexto','paginacionAjax');
         Media::addJsDef(array(
-            "ajax_link" => $ajax_link,
-            'paginacion_link' => $paginacion_link
+            "ajax_link" => $ajax_link
         ));
 
         $errores = []; 
@@ -111,7 +109,9 @@ class ModuloTexto extends Module{
                 $this->context->smarty->assign("mensaje_error",$this->displayError($mensaje_err));
             }
         }
+
         $this->paginacion();
+        
         return $this->display(__FILE__, 'backconfig.tpl');
     }
 
@@ -123,52 +123,25 @@ class ModuloTexto extends Module{
         ON p.id_producto = pl.id_product 
         GROUP BY p.id_producto";
         $productos = Db::getInstance()->ExecuteS($sql_producto);
-        $where = "";
         $producto_seleccionado = "";
-
-        if( Tools::getValue('select_producto') && Tools::getValue('select_producto')!= 'mostrar_todos'){
-            $where = "WHERE id_producto = " . Tools::getValue('select_producto');
-            $producto_seleccionado = Tools::getValue('select_producto');
-        }
 
         //Consulta obtener el nuumero de registros
         define('NUM_PREGUNTAS',6);
         $pregunta_inicial = 0;
-        $sql = "SELECT COUNT(*) FROM " ._DB_PREFIX_."preguntanos " . $where;
+        $pagina_actual = 0;
+        $sql = "SELECT COUNT(*) FROM " ._DB_PREFIX_."preguntanos";
         $num_registros = Db::getInstance()->getValue($sql);
         $num_paginas = $num_registros/NUM_PREGUNTAS;
-        $pagina_actual = 0;
-
-        if(Tools::isSubmit('paginacion_a')){
-            $pagina = Tools::getValue('pagina_actual');
-            $opcion = Tools::getValue('paginacion_a');
-            switch($opcion){
-                case '<<': 
-                    $pagina_actual = 0;
-                    break;
-                case '<': 
-                    $pagina_actual = $pagina - 1;
-                    break;
-                case '>':
-                    $pagina_actual = $pagina + 1;
-                    break;
-                case '>>': 
-                    $pagina_actual = ceil($num_paginas - 1) ;
-                    break;
-                default: 
-                    $pagina_actual = $pagina;
-                    break;
-            }
-
-            $pregunta_inicial = $pagina_actual * NUM_PREGUNTAS;
-
-        }else if(Tools::isSubmit('paginacion')){
-            $pagina_actual= Tools::getValue('paginacion') - 1;
-            $pregunta_inicial = $pagina_actual * NUM_PREGUNTAS;
-        }
-        
-        $sql_productos = "SELECT * FROM " ._DB_PREFIX_. "preguntanos ".$where." LIMIT $pregunta_inicial, ". NUM_PREGUNTAS;
+        $sql_productos = "SELECT * FROM " ._DB_PREFIX_. "preguntanos LIMIT $pregunta_inicial, " . NUM_PREGUNTAS;
         $respuestas = Db::getInstance()->executeS($sql_productos);
+
+        for($i = 0; $i < count($respuestas);$i++){
+            for($j = 0 ; $j < count($productos);$j++){
+                if($respuestas[$i]['id_producto'] == $productos[$j]['id_product']){
+                    $respuestas[$i]['name'] = $productos[$j]['name'];
+                }
+            }
+        }
 
         $this->context->smarty->assign([
             'titulo' => Configuration::get('MODULO_TEXTO_TIT'),
@@ -178,6 +151,7 @@ class ModuloTexto extends Module{
             'productos' => $productos,
             'producto_seleccionado' => $producto_seleccionado
         ]);
+
     }
 
     /**

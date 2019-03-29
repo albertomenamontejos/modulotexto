@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-03-28 14:16:37
+/* Smarty version 3.1.33, created on 2019-03-29 14:49:23
   from '/Applications/MAMP/htdocs/prestashop/modules/modulotexto/views/templates/hook/backconfig.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c9cc935c16653_47078205',
+  'unifunc' => 'content_5c9e2263722bd9_79971065',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '699b5c9c2bc3f1681ae4511ca09749f0a0ceb783' => 
     array (
       0 => '/Applications/MAMP/htdocs/prestashop/modules/modulotexto/views/templates/hook/backconfig.tpl',
-      1 => 1553778917,
+      1 => 1553867003,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c9cc935c16653_47078205 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c9e2263722bd9_79971065 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Block modulo_texto -->
 <div id="mymodule_block_home" class="block block-modulo"><?php if (isset($_smarty_tpl->tpl_vars['confirmacion']->value)) {
 echo $_smarty_tpl->tpl_vars['confirmacion']->value;
@@ -41,7 +41,7 @@ if ($_smarty_tpl->tpl_vars['producto_seleccionado']->value == $_smarty_tpl->tpl_
 </option><?php }
 }
 }
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></select></h4><input type="submit" name="aplicar_filtros" class="btn btn-success" value="Aplicar filtros"></div><div class="block-content d-flex justify-content-center flex-column flex-wrap" id="contenedor_preguntas" ><?php
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></select></h4></div><div class="block-content d-flex justify-content-center flex-column flex-wrap" id="contenedor_preguntas" ><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['form_respuestas']->value, 'item', false, 'key');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['item']->value) {
@@ -49,13 +49,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_var
 "><label for="articulo_<?php echo $_smarty_tpl->tpl_vars['item']->value['id_producto'];?>
 "><div class="ids"><div class="ids-row"><p class="id-pregunta" id="pregunta_<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 ">ID pregunta: <?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+</p><p class="nom-product text-center text-secondary"><?php echo $_smarty_tpl->tpl_vars['item']->value['name'];?>
 </p><p class="id-articulo" id="articulo_<?php echo $_smarty_tpl->tpl_vars['item']->value['id_producto'];?>
 ">ID artículo: <?php echo $_smarty_tpl->tpl_vars['item']->value['id_producto'];?>
 </p></div></div><p class="st-pregunta"><span id="st_pregunta_<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['item']->value['pregunta'];?>
  </span><a href="#" data-id="<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 " class="a-modificar" id="modificar_<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
-">Modificar</a><a href="#" data-id="<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+">modificar</a><a href="#" data-id="<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 " class="a-guardar" id="guardar_<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 ">Guardar cambios</a></p><textarea name="respuestas[<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 ]" placeholder="Escriba su respuesta aqui."><?php echo $_smarty_tpl->tpl_vars['item']->value['respuesta'];?>
@@ -84,6 +85,6 @@ if ($_smarty_tpl->tpl_vars['i']->value == $_smarty_tpl->tpl_vars['pagina_actual'
 }
 }
 if ($_smarty_tpl->tpl_vars['pagina_actual']->value != ($_smarty_tpl->tpl_vars['num_paginas']->value-1)) {?><input type="submit" value=">" name="paginacion_a"><input type="submit" value=">>" name="paginacion_a"><?php }?><input type="hidden" name="pagina_actual" value="<?php echo $_smarty_tpl->tpl_vars['pagina_actual']->value;?>
-"></form></div><div class="caja-input"><input type="submit" name="guardar_cambios" value="Guardar cambios" class="btn btn-success"></div></footer></form></div> 
+"></form></div><div class="caja-input"><button type="submit" name="guardar_cambios" id="botonResponder" class="btn btn-default" value="guaardar_cambios" ><i class="process-icon-save"></i>Guardar</button></div></footer></form></div> 
 <!-- /Block modulo_texto --><?php }
 }

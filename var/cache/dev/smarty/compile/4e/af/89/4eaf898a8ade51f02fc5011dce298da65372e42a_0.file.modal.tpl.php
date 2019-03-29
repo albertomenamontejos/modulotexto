@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-03-28 13:58:36
+/* Smarty version 3.1.33, created on 2019-03-29 14:34:08
   from '/Applications/MAMP/htdocs/prestashop/admin498r8movc/themes/new-theme/template/modal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c9cc4fc9278b5_93398531',
+  'unifunc' => 'content_5c9e1ed05cc9f1_89344232',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c9cc4fc9278b5_93398531 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c9e1ed05cc9f1_89344232 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="modal fade" id="<?php echo $_smarty_tpl->tpl_vars['modal_id']->value;?>
 " tabindex="-1">
 	<div class="modal-dialog <?php if (isset($_smarty_tpl->tpl_vars['modal_class']->value)) {

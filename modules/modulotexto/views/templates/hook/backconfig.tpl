@@ -30,23 +30,25 @@
                   
         </select>
       </h4>
-      <input type="submit" name="aplicar_filtros" class="btn btn-success" value="Aplicar filtros">
     </div>
 
     <div class="block-content d-flex justify-content-center flex-column flex-wrap" id="contenedor_preguntas" >
 
       {foreach key=key item=item from=$form_respuestas}
+
         <div class="pregunta border border-dark rounded" id="box_{$item['id']}">
           <label for="articulo_{$item['id_producto']}">
               <div class="ids">
                 <div class="ids-row">
                   <p class="id-pregunta" id="pregunta_{$item['id']}">ID pregunta: {$item['id']}</p>
+                  <p class="nom-product text-center text-secondary">{$item['name']}</p> 
                   <p class="id-articulo" id="articulo_{$item['id_producto']}">ID artículo: {$item['id_producto']}</p>
                 </div>
+               
               </div>
               <p class="st-pregunta">
                 <span id="st_pregunta_{$item['id']}">{$item['pregunta']} </span>
-                <a href="#"  data-id="{$item['id']}" class="a-modificar" id="modificar_{$item['id']}">Modificar</a>
+                <a href="#"  data-id="{$item['id']}" class="a-modificar" id="modificar_{$item['id']}">modificar</a>
                 <a href="#"  data-id="{$item['id']}" class="a-guardar" id="guardar_{$item['id']}">Guardar cambios</a>
               </p>
               <textarea name="respuestas[{$item['id']}]" placeholder="Escriba su respuesta aqui.">{$item['respuesta']}</textarea>
@@ -94,7 +96,10 @@
       </div>
 
       <div class="caja-input">
-        <input type="submit" name="guardar_cambios" value="Guardar cambios" class="btn btn-success">
+           <button type="submit" name="guardar_cambios" id="botonResponder" class="btn btn-default" value="guaardar_cambios" >
+          <i class="process-icon-save"></i>
+          Guardar
+        </button>
       </div>
     </footer>
 

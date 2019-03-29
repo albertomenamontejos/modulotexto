@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-03-28 13:58:37
+/* Smarty version 3.1.33, created on 2019-03-29 14:34:08
   from '/Applications/MAMP/htdocs/prestashop/admin498r8movc/themes/new-theme/template/components/layout/non-responsive.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c9cc4fd002bc8_92537771',
+  'unifunc' => 'content_5c9e1ed0c506a2_28959601',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c9cc4fd002bc8_92537771 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c9e1ed0c506a2_28959601 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="non-responsive" class="js-non-responsive">
   <h1><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Oh no!'),$_smarty_tpl ) );?>
 </h1>
